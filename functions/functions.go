@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 // Funciones anonimas
 func main() {
 
@@ -7,5 +12,20 @@ func main() {
 	y := func() int {
 		return x * 2
 	}()
-	fmt.println(y)
+	fmt.Println(y)
+
+	z := 10
+	w := func() int {
+		return z * 2
+	}()
+	fmt.Println(w)
+
+	c := make(chan int)
+	go func() {
+		fmt.Println("Iniciando la funcion")
+		time.Sleep(2 * time.Second)
+		fmt.Println("End")
+		c <- 1
+	}()
+	<-c
 }
