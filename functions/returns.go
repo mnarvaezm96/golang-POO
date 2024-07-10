@@ -28,7 +28,7 @@ func getValues(x int) (double int, triple int, quad int) {
 }
 
 func main() {
-	fmt.Println(sum(4, 5, 6, 7, 8, 8))
+	fmt.Println(sum(4, 5, 6, 7, 8, 8, 9))
 	fmt.Println(sum(1, 2, 3))
 
 	printNames("Alince", "teo", "garro", "cualquiera")
