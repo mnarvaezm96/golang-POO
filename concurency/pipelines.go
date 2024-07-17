@@ -1,33 +1,33 @@
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func Generator(c chan<- int) {
-	for i := 1; i <= 10; i++ {
-		c <- i
-	}
-	close(c)
-}
+// func Generator(c chan<- int) {
+// 	for i := 1; i <= 10; i++ {
+// 		c <- i
+// 	}
+// 	close(c)
+// }
 
-func Double(in <-chan int, out chan<- int) {
-	for value := range in {
-		out <- 2 * value
-		//int <- 1
-	}
-	close(out)
-}
+// func Double(in <-chan int, out chan<- int) {
+// 	for value := range in {
+// 		out <- 2 * value
+// 		//int <- 1
+// 	}
+// 	close(out)
+// }
 
-func Print(c <-chan int) {
-	for value := range c {
-		fmt.Println(value)
-	}
-}
+// func Print(c <-chan int) {
+// 	for value := range c {
+// 		fmt.Println(value)
+// 	}
+// }
 
-func main() {
-	generator := make(chan int)
-	doubles := make(chan int)
+// func main() {
+// 	generator := make(chan int)
+// 	doubles := make(chan int)
 
-	go Generator(generator)
-	go Double(generator, doubles)
-	Print(doubles)
-}
+// 	go Generator(generator)
+// 	go Double(generator, doubles)
+// 	Print(doubles)
+// }
